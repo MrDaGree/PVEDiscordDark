@@ -27,7 +27,7 @@ echo -ne '\n'
 
 sleep 1
 echo -ne '#                         (0%) Checking the latestversion\r'
-latestversion=`curl -s "https://api.github.com/repos/Weilbyte/PVEDiscordDark/releases/latest" | awk -F '"' '/tag_name/{print $4}'`
+latestversion=`curl -s "https://api.github.com/repos/MrDaGree/PVEDiscordDark/releases/latest" | awk -F '"' '/tag_name/{print $4}'`
 echo -ne '#######################   (100%) Checking the latestversion\r'
 sleep 1
 echo -ne '\n'
@@ -53,7 +53,7 @@ then
     if [[ $REPLY =~ ^[YyOo]$ ]]
     then
         echo -ne "Downloading...\n"
-        wget -O "PVEDiscordDark.py" "https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.py"
+        wget -O "PVEDiscordDark.py" "https://raw.githubusercontent.com/MrDaGree/PVEDiscordDark/master/PVEDiscordDark.py"
         echo "$latestversion" > $file
         read -p "$(echo -e $yellow)[Warning] Start the updated script ? $(echo -e $default)[y/n]" -n 1 -r
         echo ""   # (optional) move to a new line
